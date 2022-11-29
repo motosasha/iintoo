@@ -1,0 +1,5 @@
+.idea/
+dev/json/
+build/
+node_modules/
+temp/
