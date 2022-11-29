@@ -6,7 +6,7 @@
 	--font_primary:         'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 
 	--body_bg:              var(--back-primary);
-	--body_color:           var(--color_black);
+	--body_color:           var(--front-primary);
 
 	--font_size_root:       62.5%;
 	--font_size_base:       1.6rem;
@@ -26,6 +26,15 @@
 
 	--border-dark:          #e5e5e5;
 	--border-light:         #ffffff;
+
+	--shadow-default:       0 .8rem 1.6rem #d9e8fa;
+
+	--temp: #3698fb;
+	--temp2: #7b8a92;
+	--temp3: #96a5b1;
+	--temp4: #afafaf;
+	--temp5: #eeeeee;
+	--temp6: #ffffff;
 }
 
 $screen-m:                  0 !default;

@@ -1,0 +1,17 @@
+extends ../pug/layout_default.pug
+
+block variables
+	- pageTitle = 'Register form'
+	- metaDescription = ''
+	- metaKeywords = ''
+
+block pageMain
+	section.registration
+		.registration__inner
+			.registration__window
+				.registration__illustration-col
+					img.registration__cover(src='img/img__registration.jpg', alt='iintoo vest together')
+					svg.registration__logo
+						use(href='img/svgSprite.svg#logo__iintoo')
+				.registration__form-col form
+
