@@ -5,6 +5,9 @@
 .link {
 	color: var(--accent-blue);
 	text-decoration: underline;
+	&:focus {
+		outline: 1rem solid var(--back-primary);
+	}
 	&:hover {
 		text-decoration: none;
 	}

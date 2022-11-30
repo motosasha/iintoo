@@ -7,13 +7,17 @@
 	display: flex;
 	gap: 1rem;
 	&__input {
-		display: none;
+		opacity: 0;
+		position: absolute;
 	}
 	&__fake-input {
 		border: .1rem solid var(--border-dark);
 		height: 1.2rem;
 		transition: border .25s ease;
 		width: 1.2rem;
+	}
+	&__input:focus + &__fake-input {
+		outline: 1rem solid var(--back-primary);
 	}
 	&__input:checked + &__fake-input {
 		border: .4rem solid var(--accent-blue);
