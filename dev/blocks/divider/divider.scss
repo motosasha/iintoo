@@ -1,0 +1,26 @@
+// В этом файле должны быть стили для БЭМ-блока divider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.divider {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	&[data-title]::before {
+		background: var(--back-secondary);
+		content: attr(data-title);
+		display: block;
+		@include divider;
+		padding: 0 .8rem;
+		position: relative;
+		text-transform: uppercase;
+		z-index: 2;
+	}
+	&::after {
+		border-bottom: .1rem solid var(--border-dark);
+		content: '';
+		max-width: 25rem;
+		position: absolute;
+		width: 100%;
+	}
+}

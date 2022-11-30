@@ -1,0 +1,11 @@
+// В этом файле должны быть стили для БЭМ-блока link, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.link {
+	color: var(--accent-blue);
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}

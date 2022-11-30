@@ -1,0 +1,17 @@
+// В этом файле должны быть стили для БЭМ-блока input, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.input {
+	appearance: none;
+	border: .1rem solid var(--border-light);
+	display: block;
+	@include input;
+	outline: none;
+	padding: 2.5rem 1rem 1.2rem;
+	transition: all .25s ease;
+	width: 100%;
+	&:focus {
+		border-left-color: var(--accent-blue);
+	}
+}

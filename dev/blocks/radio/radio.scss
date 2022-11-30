@@ -1,0 +1,54 @@
+// В этом файле должны быть стили для БЭМ-блока radio, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.radio {
+	align-items: center;
+	display: flex;
+	gap: 1.2rem;
+	&__input {
+		display: none;
+	}
+	&__fake-input {
+		border: .1rem solid var(--border-dark);
+		border-radius: 50%;
+		height: 1.7rem;
+		transition: border .25s ease;
+		width: 1.7rem;
+	}
+	&__input:checked + &__fake-input {
+		border: .4rem solid var(--accent-blue);
+	}
+	&__label {
+		align-items: center;
+		display: flex;
+		@include radio-label;
+		gap: .5rem;
+		user-select: none;
+	}
+	&__info {
+		cursor: pointer;
+		position: relative;
+	}
+	&__icon {
+		height: 1rem;
+		width: 1rem;
+	}
+	&__message {
+		background: var(--back-secondary);
+		border-radius: .8rem;
+		box-shadow: var(--shadow-default);
+		@include radio-message;
+		opacity: 0;
+		padding: 1rem 1.2rem 1.5rem;
+		pointer-events: none;
+		position: absolute;
+		transform: translate(-50%, 3rem);
+		transition: all .25s ease;
+		width: 26rem;
+	}
+	&__info:hover &__message {
+		opacity: 1;
+		transform: translate(-50%, 2.5rem);
+	}
+}

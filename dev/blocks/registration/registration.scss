@@ -49,4 +49,37 @@
 		top: 4.4rem;
 		width: 12.7rem;
 	}
+	&__title {
+		@include reg-title;
+		margin: 0 0 2rem;
+	}
+	&__subtitle {
+		@include reg-subtitle;
+		margin: 0 0 1.5rem;
+	}
+	&__descr {
+		@include reg-descr;
+		margin: 0 0 5.5rem;
+		&_small {
+			color: var(--front-secondary);
+			@include reg-descr-small;
+			margin: 0 0 4.8rem;
+		}
+	}
+	&__devider {
+		margin: 5rem 0;
+	}
+	&__row {
+		margin-bottom: 6rem;
+	}
+	&__social-set {
+		display: grid;
+		gap: 4rem;
+		grid-template-columns: 1fr 1fr;
+	}
+	&__radio-set {
+		display: flex;
+		gap: 4rem;
+		margin-bottom: 14.5rem;
+	}
 }

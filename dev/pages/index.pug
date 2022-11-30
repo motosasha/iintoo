@@ -4,6 +4,13 @@ block variables
 	- pageTitle = 'Register form'
 	- metaDescription = ''
 	- metaKeywords = ''
+	-
+		const radios = [
+			{title: 'Individual', isChecked: true},
+			{title: 'Business'},
+			{title: 'IRA'},
+			{title: 'Trust'}
+		]
 
 block pageMain
 	section.registration
@@ -13,5 +20,49 @@ block pageMain
 					img.registration__cover(src='img/img__registration.jpg', alt='iintoo vest together')
 					svg.registration__logo
 						use(href='img/svgSprite.svg#logo__iintoo')
-				.registration__form-col form
+				.registration__form-col
+					form.form
+						h1.registration__title Get iintoo it today
+						p.registration__descr There is no charge or obligation upon registration.
 
+						.registration__social-set
+							button#fb.button.button_social.button_fb
+								svg.button__icon
+									use(href='img/svgSprite.svg#icon__social_fb')
+								.button__title Register with Facebook
+							button#in.button.button_social.button_in
+								svg.button__icon
+									use(href='img/svgSprite.svg#icon__social_in')
+								.button__title Register with LinkedIn
+
+						.divider.registration__devider(data-title='or')
+
+						.form__row.registration__row
+							label.form__field
+								.form__field-label Email
+								input.input.form__input(type='email', value='gus.goodwin@gmail.com', pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
+							label.form__field
+								.form__field-label Phone
+								input.input.form__input(type='tel', pattern="[0-9]{3}[0-9]{3}[0-9]{4}" maxlength='11', required)
+
+						h2.registration__subtitle What type of investor are you?
+						p.registration__descr.registration__descr_small Select the type of investor you are below.
+
+						.registration__radio-set
+							each radio in radios
+								label.radio
+									input.radio__input(type='radio', name='investor_type', checked= radio.isChecked)
+									.radio__fake-input
+									.radio__label!= radio.title
+										.radio__info
+											svg.radio__icon
+												use(href='img/svgSprite.svg#icon__info')
+											.radio__message I am a natural person investing on my own behalf as a sole owner, joint tenant, or tenant in common
+
+						label.checkbox
+							input.checkbox__input(type='checkbox')
+							.checkbox__fake-input
+							.checkbox__label I agree to the terms and receiving notifications from iintoo #[a.link(href='#') View full terms]
+
+						button.button.form__send-button(type='submit')
+							.button__title Create Account
