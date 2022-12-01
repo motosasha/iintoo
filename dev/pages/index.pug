@@ -6,10 +6,10 @@ block variables
 	- metaKeywords = ''
 	-
 		const radios = [
-			{title: 'Individual', isChecked: true},
-			{title: 'Business'},
-			{title: 'IRA'},
-			{title: 'Trust'}
+			{title: 'Individual', value: 'individual', isChecked: true},
+			{title: 'Business', value: 'business'},
+			{title: 'IRA', value: 'ira'},
+			{title: 'Trust', value: 'trust'}
 		]
 
 block pageMain
@@ -51,7 +51,7 @@ block pageMain
 						.registration__radio-set
 							each radio in radios
 								label.radio
-									input.radio__input(type='radio', name='investor_type', checked= radio.isChecked)
+									input.radio__input(type='radio', name='investor_type', value= radio.value, checked= radio.isChecked)
 									.radio__fake-input
 									.radio__label!= radio.title
 										.radio__info
@@ -62,7 +62,7 @@ block pageMain
 						label.checkbox
 							input.checkbox__input(type='checkbox')
 							.checkbox__fake-input
-							.checkbox__label I agree to the terms and receiving notifications from iintoo #[a.link(href='#') View full terms]
+							.checkbox__label I agree to the terms and receiving notifications from iintoo #[a.link(href='#', target='_blank') View full terms]
 
 						button.button.form__send-button(type='submit')
 							.button__title Create Account
