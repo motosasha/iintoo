@@ -5,8 +5,11 @@
 .form {
 	&__row {
 		display: grid;
-		gap: 4rem;
-		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		@media screen and (min-width: $screen-t) {
+			gap: 4rem;
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 	&__field {
 		position: relative;
@@ -26,11 +29,16 @@
 		color: var(--front-invert);
 		display: block;
 		@include send-button;
-		margin-top: 6rem;
-		max-width: 24.5rem;
+		margin-top: 2.5rem;
 		padding: 1.2rem;
 		transition: filter .25s ease;
 		width: 100%;
+		@media screen and (min-width: $screen-ti) {
+			max-width: 24.5rem;
+		}
+		@media screen and (min-width: $screen-d) {
+			margin-top: 6rem;
+		}
 		&:hover {
 			filter: brightness(1.15);
 		}

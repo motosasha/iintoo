@@ -27,11 +27,12 @@
 		align-items: center;
 		display: flex;
 		@include radio-label;
-		gap: .5rem;
+		gap: .2rem;
 		user-select: none;
 	}
 	&__info {
 		cursor: pointer;
+		padding: .3rem;
 		position: relative;
 	}
 	&__icon {
@@ -44,15 +45,40 @@
 		box-shadow: var(--shadow-default);
 		@include radio-message;
 		opacity: 0;
-		padding: 1rem 1.2rem 1.5rem;
+		padding: 1rem;
 		pointer-events: none;
 		position: absolute;
-		transform: translate(-50%, 3rem);
+		transform: translate(2rem, -1rem);
 		transition: all .25s ease;
-		width: 26rem;
+		width: calc(100vw - 18rem);
+		z-index: 2;
+		@media screen and (min-width: $screen-t) {
+			padding: 1rem 1.2rem 1.5rem;
+			transform: translate(-40%, 3rem);
+			width: 26rem;
+		}
+		@media screen and (min-width: $screen-ti) {
+			transform: translate(-50%, 3rem);
+		}
 	}
 	&__info:hover &__message {
 		opacity: 1;
-		transform: translate(-50%, 2.5rem);
+		transform: translate(2rem, -2rem);
+		@media screen and (min-width: $screen-t) {
+			transform: translate(-40%, 2.5rem);
+		}
+		@media screen and (min-width: $screen-ti) {
+			transform: translate(-50%, 2.5rem);
+		}
+	}
+	&:last-child &__info &__message {
+		@media screen and (min-width: $screen-t) and (max-width: $screen-d - 1) {
+			transform: translate(-80%, 3rem);
+		}
+	}
+	&:last-child &__info:hover &__message {
+		@media screen and (min-width: $screen-t) and (max-width: $screen-d - 1) {
+			transform: translate(-80%, 3rem);
+		}
 	}
 }
